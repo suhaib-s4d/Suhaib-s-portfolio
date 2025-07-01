@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suhaib Bahzad Omar | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+        
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --primary-light: #93c5fd;
+            --secondary: #1e293b;
+            --accent: #f97316;
+            --light: #f8fafc;
+            --dark: #0f172a;
+            --gray: #64748b;
+            --gray-light: #e2e8f0;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+            color: var(--secondary);
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3, .heading-font {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .hero-bg {
+            background-image: linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.85)), 
+                            url('https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            border: 1px solid var(--gray-light);
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+            border-color: var(--primary-light);
+        }
+        
+        .skill-bar {
+            height: 6px;
+            border-radius: 3px;
+            background-color: var(--gray-light);
+        }
+        
+        .skill-progress {
+            height: 100%;
+            border-radius: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--primary-dark));
+        }
+        
+        .section {
+            scroll-margin-top: 80px;
+            padding: 6rem 0;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 3.5rem;
+            position: relative;
+            display: inline-block;
+            color: var(--dark);
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+        
+        .bg-alt {
+            background-color: rgba(241, 245, 249, 0.6);
+        }
+        
+        @media (min-width: 1024px) {
+            .section {
+                padding: 8rem 0;
+            }
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white backdrop-blur-sm bg-opacity-90 shadow-sm z-50 transition-all">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="#" class="text-2xl font-bold text-slate-800 hover:text-primary transition-colors">
+                    <span class="text-primary">Suhaib</span> Bahzad
+                </a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#about" class="text-gray-600 hover:text-primary font-medium transition-colors">About</a>
+                    <a href="#portfolio" class="text-gray-600 hover:text-primary font-medium transition-colors">Portfolio</a>
+                    <a href="#education" class="text-gray-600 hover:text-primary font-medium transition-colors">Education</a>
+                    <a href="#experience" class="text-gray-600 hover:text-primary font-medium transition-colors">Experience</a>
+                    <a href="#skills" class="text-gray-600 hover:text-primary font-medium transition-colors">Skills</a>
+                    <a href="#contact" class="text-gray-600 hover:text-primary font-medium transition-colors">Contact</a>
+                </div>
+                <button class="md:hidden focus:outline-none" id="menu-toggle">
+                    <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            <!-- Mobile menu -->
+            <div class="md:hidden hidden mt-2" id="mobile-menu">
+                <a href="#about" class="block py-2 text-gray-700 hover:text-indigo-600 transition">About</a>
+                <a href="#portfolio" class="block py-2 text-gray-700 hover:text-indigo-600 transition">Portfolio</a>
+                <a href="#education" class="block py-2 text-gray-700 hover:text-indigo-600 transition">Education</a>
+                <a href="#experience" class="block py-2 text-gray-700 hover:text-indigo-600 transition">Experience</a>
+                <a href="#skills" class="block py-2 text-gray-700 hover:text-indigo-600 transition">Skills</a>
+                <a href="#contact" class="block py-2 text-gray-700 hover:text-indigo-600 transition">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-bg min-h-screen flex items-center justify-center text-white pt-20 section" id="home">
+        <div class="container mx-auto px-6 text-center">
+            <div class="animate-fade-in-up">
+                <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">Suhaib Bahzad Omar</h1>
+                <h2 class="text-xl md:text-2xl mb-10 font-light max-w-2xl mx-auto text-gray-300">
+                    Computer Education Student | Web Developer | Creative Technologist | Sales Manager
+                </h2>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="#contact" class="bg-primary hover:bg-primary-dark text-white font-medium py-4 px-8 rounded-md transition-all duration-300 inline-flex items-center justify-center shadow-lg hover:shadow-xl">
+                        Contact Me <i class="fas fa-arrow-right ml-2 animate-pulse"></i>
+                    </a>
+                    <a href="#portfolio" class="bg-transparent hover:bg-white/10 text-white font-medium py-4 px-8 rounded-md transition-all duration-300 inline-flex items-center justify-center border border-white hover:border-primary">
+                        View Work <i class="fas fa-eye ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Me -->
+    <section class="section bg-white" id="about">
+        <div class="container mx-auto px-6">
+            <h2 class="section-title text-center">About Me</h2>
+            <!-- My Image Section -->
+            <div class="flex justify-center mb-12">
+                <div class="relative w-48 h-48 md:w-64 md:h-64">
+                    <img src="images/profile.jpg" alt="Suhaib Bahzad" 
+                         class="rounded-full w-full h-full object-cover border-4 border-primary shadow-xl">
+                    <div class="absolute inset-0 rounded-full border-4 border-primary/30 animate-ping-slow opacity-0"></div>
+                </div>
+        </div>
+    </div>
+</section>
+
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-white p-8 rounded-xl shadow-md border border-gray-100">
+                    <p class="text-gray-700 mb-6 text-lg leading-relaxed">
+                        Motivated and adaptable professional with over 4 years of experience in sales and customer service, along with a background in education. Skilled in managing retail operations, handling transactions, and supporting customer needs.
+                    </p>
+                    <p class="text-gray-700 mb-6">
+                        Holds a Bachelor's degree in Computer Education and completed two semesters of school-based teaching experience. Combines strong communication skills with a practical, hands-on approach to both business and education.
+                    </p>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+                        <div class="bg-indigo-100 p-4 rounded-lg text-center">
+                            <i class="fas fa-laptop-code text-indigo-600 text-3xl mb-2"></i>
+                            <p class="font-medium">Web Development</p>
+                        </div>
+                        <div class="bg-indigo-100 p-4 rounded-lg text-center">
+                            <i class="fas fa-chalkboard-teacher text-indigo-600 text-3xl mb-2"></i>
+                            <p class="font-medium">Teaching</p>
+                        </div>
+                        <div class="bg-indigo-100 p-4 rounded-lg text-center">
+                            <i class="fas fa-camera text-indigo-600 text-3xl mb-2"></i>
+                            <p class="font-medium">Photography</p>
+                        </div>
+                        <div class="bg-indigo-100 p-4 rounded-lg text-center">
+                            <i class="fas fa-users text-indigo-600 text-3xl mb-2"></i>
+                            <p class="font-medium">Teamwork</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio -->
+    <section class="py-20 bg-gray-50 section" id="portfolio">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Portfolio & Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-md card-hover transition duration-300">
+                    <div class="h-48 bg-indigo-100 flex items-center justify-center">
+                        <i class="fas fa-laptop-code text-indigo-600 text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-gray-800">Programming Anxiety Research</h3>
+                        <p class="text-gray-600 mb-4">Research about programming anxiety on beginner students, analyzing challenges and proposing solutions.</p>
+                        <span class="inline-block bg-indigo-100 text-indigo-800 text-xs px-2 py-1 rounded-full">Academic Research</span>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-md card-hover transition duration-300">
+                    <div class="h-48 bg-blue-100 flex items-center justify-center">
+                        <i class="fas fa-robot text-blue-600 text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-gray-800">Educational Robotics</h3>
+                        <p class="text-gray-600 mb-4">Participated in 2–3 educational robotics projects aimed at enhancing interactive learning experiences.</p>
+                        <span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">Technology</span>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-md card-hover transition duration-300">
+                    <div class="h-48 bg-purple-100 flex items-center justify-center">
+                        <i class="fas fa-camera-retro text-purple-600 text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-gray-800">Photography & Videography</h3>
+                        <p class="text-gray-600 mb-4">Captured and edited media content for cultural events and personal creative projects.</p>
+                        <span class="inline-block bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded-full">Creative</span>
+                    </div>
+                </div>
+                
+                <!-- Project 4 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-md card-hover transition duration-300">
+                    <div class="h-48 bg-green-100 flex items-center justify-center">
+                        <i class="fas fa-store text-green-600 text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-gray-800">Home Marka</h3>
+                        <p class="text-gray-600 mb-4">Sales manager and cashier with 4 months experience in customer communication and retail operations.</p>
+                        <span class="inline-block bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">Retail</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education -->
+    <section class="py-20 bg-white section" id="education">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Education</h2>
+            <div class="max-w-3xl mx-auto">
+                <!-- Education 1 -->
+                <div class="mb-8">
+                    <div class="flex items-start">
+                        <div class="bg-indigo-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-graduation-cap text-indigo-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800">Tishik International University</h3>
+                            <p class="text-gray-600 mb-1">B.A. in Computer Education (Final Year)</p>
+                            <p class="text-sm text-gray-500">2020 - Present</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Education 2 -->
+                <div class="mb-8">
+                    <div class="flex items-start">
+                        <div class="bg-blue-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-chalkboard-teacher text-blue-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800">Internship – Lara School</h3>
+                            <p class="text-gray-600 mb-1">Taught and supported ICT courses</p>
+                            <p class="text-sm text-gray-500">2024–2025</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience -->
+    <section class="py-20 bg-gray-50 section" id="experience">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Experience</h2>
+            <div class="max-w-3xl mx-auto">
+                <!-- Experience 1 -->
+                <div class="mb-8">
+                    <div class="flex items-start">
+                        <div class="bg-purple-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-cash-register text-purple-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800">Sales & Cashier – Home Marka</h3>
+                            <p class="text-gray-600 mb-1">Managed retail operations, handled transactions, and supported customer needs.</p>
+                            <p class="text-sm text-gray-500">2023 (4 months)</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Experience 2 -->
+                <div class="mb-8">
+                    <div class="flex items-start">
+                        <div class="bg-green-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-school text-green-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800">Intern Teacher – Lara Private School</h3>
+                            <p class="text-gray-600 mb-1">Taught and supported ICT courses for students.</p>
+                            <p class="text-sm text-gray-500">2024–2025</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Experience 3 -->
+                <div class="mb-8">
+                    <div class="flex items-start">
+                        <div class="bg-yellow-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-hands-helping text-yellow-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800">Community Organizer</h3>
+                            <p class="text-gray-600 mb-1">Volunteered in university cultural events and student-led initiatives.</p>
+                            <p class="text-sm text-gray-500">Various dates</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section class="py-20 bg-white section" id="skills">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Skills</h2>
+            <div class="max-w-3xl mx-auto">
+                <!-- Technical Skills -->
+                <div class="mb-8">
+                    <h3 class="text-xl font-bold mb-4 text-gray-800 flex items-center">
+                        <i class="fas fa-code mr-2 text-indigo-600"></i> Technical Skills
+                    </h3>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-700">HTML/CSS</span>
+                                <span class="text-gray-700">85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-700">JavaScript</span>
+                                <span class="text-gray-700">60%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 60%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-700">UI Design</span>
+                                <span class="text-gray-700">75%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 75%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Professional Skills -->
+                <div class="mb-8">
+                    <h3 class="text-xl font-bold mb-4 text-gray-800 flex items-center">
+                        <i class="fas fa-user-tie mr-2 text-blue-600"></i> Professional Skills
+                    </h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full">Teaching</span>
+                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full">Sales</span>
+                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full">Customer Service</span>
+                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full">Team Collaboration</span>
+                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full">Communication</span>
+                    </div>
+                </div>
+                
+                <!-- Creative Skills -->
+                <div class="mb-8">
+                    <h3 class="text-xl font-bold mb-4 text-gray-800 flex items-center">
+                        <i class="fas fa-paint-brush mr-2 text-purple-600"></i> Creative Skills
+                    </h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full">Photography</span>
+                        <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full">Videography</span>
+                        <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full">Video Editing</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="py-20 bg-gray-50 section" id="contact">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Get In Touch</h2>
+            <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Contact Info -->
+                <div class="bg-white p-8 rounded-xl shadow-md">
+                    <h3 class="text-xl font-bold mb-6 text-gray-800">Contact Information</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="bg-indigo-100 p-2 rounded-full mr-4">
+                                <i class="fas fa-envelope text-indigo-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-700">Email</h4>
+                                <a href="mailto:suhaibbahzad6@gmail.com" class="text-gray-600 hover:text-indigo-600 transition">suhaibbahzad6@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-indigo-100 p-2 rounded-full mr-4">
+                                <i class="fas fa-phone text-indigo-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-700">Phone</h4>
+                                <a href="tel:+96407512469108" class="text-gray-600 hover:text-indigo-600 transition">+964 0751 246 9108</a>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-indigo-100 p-2 rounded-full mr-4">
+                                <i class="fas fa-map-marker-alt text-indigo-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-700">Location</h4>
+                                <p class="text-gray-600">Erbil, Kurdistan</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8">
+                        <h4 class="font-medium text-gray-700 mb-4">Connect with me</h4>
+                        <div class="flex space-x-4">
+                            <a href="https://www.linkedin.com/in/suhaib-bahzad-b24067372?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" class="bg-gray-100 hover:bg-indigo-100 p-3 rounded-full transition">
+                                <i class="fab fa-linkedin text-gray-700 hover:text-indigo-600"></i>
+                            </a>
+                            <a href="https://www.facebook.com/share/12MMDrxz6uQ/?mibextid=wwXIfr" class="bg-gray-100 hover:bg-indigo-100 p-3 rounded-full transition">
+                                <i class="fab fa-facebook-f text-gray-700 hover:text-indigo-600"></i>
+                            </a>
+                            <a href="https://www.instagram.com/s4d_10?igsh=MTA3Z3d5MWhpdmJlMA%3D%3D&utm_source=qr" class="bg-gray-100 hover:bg-indigo-100 p-3 rounded-full transition">
+                                <i class="fab fa-instagram text-gray-700 hover:text-indigo-600"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact Form -->
+                <div class="bg-white p-8 rounded-xl shadow-md">
+                    <h3 class="text-xl font-bold mb-6 text-gray-800">Send Me a Message</h3>
+                    <form id="contact-form">
+                        <div class="mb-4">
+                            <label for="name" class="block text-gray-700 mb-2">Name</label>
+                            <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent" required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="email" class="block text-gray-700 mb-2">Email</label>
+                            <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent" required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="message" class="block text-gray-700 mb-2">Message</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent" required></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-3 px-6 rounded-lg transition duration-300">
+                            Send Message <i class="fas fa-paper-plane ml-2"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p> Suhaib Bahzad Omar. All rights reserved.</p>
+            <div class="flex justify-center space-x-6 mt-4">
+                <a href="https://www.linkedin.com/in/suhaib-bahzad-b24067372?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" class="hover:text-indigo-400 transition"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.facebook.com/share/12MMDrxz6uQ/?mibextid=wwXIfr" class="hover:text-indigo-400 transition"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/s4d_10?igsh=MTA3Z3d5MWhpdmJlMA%3D%3D&utm_source=qr" class="hover:text-indigo-400 transition"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+        
+        // Form submission
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! I will get back to you soon.');
+            this.reset();
+        });
+        
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
